@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Canteen Billing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🍽️ college canteen</h1>
+        <p>Billing System</p>
+    </header>
+
+    <div class="container">
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <h2>Menu</h2>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically generated -->
+            </div>
+        </section>
+
+        <!-- Order Management Panel -->
+        <aside class="order-panel">
+            <div class="order-tabs">
+                <button class="tab-btn active" data-tab="current-order">Current Order</button>
+                <button class="tab-btn" data-tab="orders-list">Orders</button>
+                <button class="tab-btn" data-tab="history">History</button>
+            </div>
+
+            <!-- Current Order Tab -->
+            <div class="tab-content active" id="current-order">
+                <div class="order-header">
+                    <h3>Current Order</h3>
+                    <button class="btn-secondary" id="newOrderBtn">New Order</button>
+                </div>
+                <div class="order-items" id="currentOrderItems">
+                    <p class="empty-message">No items in current order</p>
+                </div>
+                <div class="order-summary" id="orderSummary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total:</span>
+                        <span id="total" class="total-amount">₹0.00</span>
+                    </div>
+                    <button class="btn-primary" id="completeOrderBtn" disabled>Complete Order</button>
+                    <button class="btn-secondary" id="clearOrderBtn" disabled>Clear Order</button>
+                </div>
+            </div>
+
+            <!-- Orders List Tab -->
+            <div class="tab-content" id="orders-list">
+                <div class="order-header">
+                    <h3>Active Orders</h3>
+                </div>
+                <div class="orders-list" id="ordersList">
+                    <p class="empty-message">No active orders</p>
+                </div>
+            </div>
+
+            <!-- History Tab -->
+            <div class="tab-content" id="history">
+                <div class="order-header">
+                    <h3>Order History</h3>
+                    <button class="btn-secondary" id="clearHistoryBtn">Clear History</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <p class="empty-message">No order history</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bill Display Modal -->
+    <div class="modal" id="billModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Bill Receipt</h2>
+                <button class="close-btn" id="closeBillBtn">&times;</button>
+            </div>
+            <div class="bill-content" id="billContent">
+                <!-- Bill content will be generated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="printBillBtn">Print Bill</button>
+                <button class="btn-secondary" id="closeBillBtn2">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
